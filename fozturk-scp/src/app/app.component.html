@@ -1,0 +1,56 @@
+<mat-toolbar color="primary">
+Soru - Cevap Portalı  
+<li class="nav-item">
+          <a class="nav-link active" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 100px;" aria-current="page" href="/soru">Soru</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 100px;" aria-current="page" href="/cevap">Cevap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 100px;" aria-current="page" href="/home">Chat</a>
+        </li>
+
+<ng-container *ngIf="user$ | async as user; else loginButton">
+    <button mat-button [matMenuTriggerFor]="userMenu">
+      <img
+        width="30"
+        height="30"
+        class="profile-image-toolbar"
+        [src]="user.photoURL ?? 'assets/images/image-placeholder.png'"
+      />
+      {{ user.displayName }}
+      <mat-icon>expand_more</mat-icon>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+      </ul>
+    </div>
+  </ng-container>
+
+  <ng-template #loginButton>
+    <button mat-button routerLink="login">
+      <mat-icon>login</mat-icon>
+      Giriş Yap
+    </button>
+  </ng-template>
+  
+  
+
+</mat-toolbar>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon>account_circle</mat-icon>
+    Profil
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    Oturumu Kapat
+  </button>
+</mat-menu>

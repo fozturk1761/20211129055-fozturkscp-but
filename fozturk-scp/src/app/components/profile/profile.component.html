@@ -1,0 +1,69 @@
+<div
+  class="form-container mat-elevation-z5 text-center"
+  *ngIf="user$ | async as user"
+>
+  <h1>Kullanıcı Profili
+  </h1>
+  <div class="profile-image">
+    <img
+      width="120"
+      height="120"
+      [src]="user.photoURL ?? 'assets/images/image-placeholder.png'"
+    />
+    <button mat-mini-fab (click)="inputField.click()">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <input #inputField type="file" hidden (change)="uploadImage($event, user)" />
+  <form class="margin-top" [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+    <div class="row">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="adı"
+          placeholder="Adı"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="soyadı"
+          placeholder="Soyadı"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="gorunenAd"
+          placeholder="Görünen Ad"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          formControlName="telefon"
+          placeholder="Telefon"
+        />
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <input
+        type="text"
+        matInput
+        formControlName="adres"
+        placeholder="Adres"
+      />
+    </mat-form-field>
+
+    <button type="submit" class="margin-top" mat-raised-button color="primary">
+      Kaydet
+    </button>
+  </form>
+</div>

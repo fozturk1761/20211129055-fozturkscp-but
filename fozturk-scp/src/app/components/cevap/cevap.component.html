@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row mt-3">
+  
+      <div class="col-md-6">
+        <h4>Cevaplanan Başlıca Sorular</h4>
+        <hr>
+
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">FIFA22 SİYAH EKRAN SORUNU</h5>
+              <small>21.01.2022</small>
+            </div>
+            <p class="mb-1">Oyun açılıyorsa sorun oyundan değil bilgisayarınızdan kaynaklıdır. Format atmanızı öneririm.</p>
+            <small>Gökdeniz Uğur</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">GOOGLE COLAB UYARI KUTULARI GÖRÜNTÜLEME</h5>
+              <small class="text-muted">10.02.2022</small>
+            </div>
+            <p class="mb-1">HTML kodunu doğrudan görüntülemek için HTML sihirli komutunu kullanabilirsiniz.</p>
+            <small class="text-muted">Tarık Üstün</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">TARAYICIDA DOSYAYA/DOSYADAN VERİ AKIŞI</h5>
+              <small class="text-muted">11.03.2022</small>
+            </div>
+            <p class="mb-1">Akışların temel kullanımı, yanıtları akışlar olarak kullanılabilir hale getirmeye dayanır. Örneğin, başarılı bir getirme isteği tarafından döndürülen yanıt gövdesi bir ReadableStream olarak gösterilebilir.</p>
+            <small class="text-muted">Cenk Tosun</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">İŞ TABANLI BULUT İŞLEME ÇÖZÜMÜ</h5>
+              <small class="text-muted">17.04.2022</small>
+            </div>
+            <p class="mb-1">Size "basit" görünse bile, bu kullanım durumu için Jenkins'i kullanırdım. İşinizin artan karmaşıklığıyla da başa çıkabilen en basit ardışık düzen ile başlayabilirsiniz.</p>
+            <small class="text-muted">Abdülkadir Ömür</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">3. TARAF CSS UYGULANMIYOR</h5>
+              <small class="text-muted">01.05.2022</small>
+            </div>
+            <p class="mb-1">Genellikle css dosyaları, global olarak yüklenmesi için uygulamanızın üst düzey sayfasına aktarılır.</p>
+            <small class="text-muted">Arda Güler</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">PES19 MAVİ EKRAN SORUNU</h5>
+              <small class="text-muted">21.06.2022</small>
+            </div>
+            <p class="mb-1">Belgelerimdeki PES19 klasöründen Save dosyasını silerek oyuna tekrar girerseniz çözülecektir.</p>
+            <small class="text-muted">Kerem Aktürkoğlu</small>
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">ZULA FPS SORUNU</h5>
+              <small class="text-muted">11.07.2022</small>
+            </div>
+            <p class="mb-1">Bu sorun oyundan çok bilgisayarınızın gereksinimlerinden kaynaklanıyor olabilir.</p>
+            <small class="text-muted">Murat Boz</small>
+          </a>
+
+          
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <form [formGroup]="frm" (ngSubmit)="CevapEkle()">
+              <div class="card">
+                <div class="card-header bg-dark text-white">
+                  <h4>Cevap Ekle</h4>
+                </div>
+                <div class="card-body">
+                  <label>Seçilen Soru</label>
+                  <input type="text" class="form-control" formControlName="secili soru">
+                  <label>Cevap</label>
+                  <textarea class="form-control" rows="3" formControlName="soru"></textarea>
+                  <label>Cevaplayan Üye</label>
+                  <input type="text" class="form-control" formControlName="yazankullanici">
+                  <input type="checkbox" formControlName="tamam" class="form-check-input"> Tamamlandı
+                </div>
+                <div class="card-footer">
+                  <input type="submit" class="btn btn-success" value="Kaydet">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div> 

@@ -1,0 +1,27 @@
+<div class="form-container mat-elevation-z5">
+    <h1>Oturum aç
+    </h1>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <mat-form-field>
+            <input matInput placeholder="Email adres" formControlName="email" />
+            <mat-error *ngIf="email?.errors?.['required']">
+                Email gerekli
+            </mat-error>
+            <mat-error *ngIf="email?.errors?.['email']">
+                Lütfen doğru bir e-posta adresi girin
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Parola" formControlName="password" type="password" />
+            <mat-error *ngIf="password?.errors?.['required']">
+                Parola gerekli
+            </mat-error>
+        </mat-form-field>
+        <div class="center margin-top">
+            <button mat-raised-button color="primary" type="submit">
+                Oturum aç
+            </button>
+        </div>
+        <span class="center margin-top">Platformda yeni misiniz? <a class="sign-up-link" routerLink="/sign-up">Üye ol!</a></span>
+    </form>
+</div>
